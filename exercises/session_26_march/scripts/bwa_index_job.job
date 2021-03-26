@@ -1,0 +1,21 @@
+#!/bin/bash -l
+
+#SBATCH -A uppmax2021-2-3 -M snowy 
+#SBATCH	-p core -n 4
+#SBATCH	-t 4:00:00
+#SBATCH	-J maj_bwa_indexing
+
+
+# LOAD rew modules 
+
+module load bioinfo-tools
+module load bwa
+ 
+
+SESSIONPATH=/home/mohamma/bdls_vt21/1TD065_Big_Data_In_Life_Sciences/exercises/session_26_march
+
+cd $SESSIONPATH/linux/test3 
+pwd
+
+# GO TO WHERE REF IS 
+bwa index -a bwtsw ref.fa
